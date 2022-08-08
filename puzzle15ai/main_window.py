@@ -35,6 +35,9 @@ def checkSolvable(data):
 
 
 class MainWindow(QMainWindow):
+    """
+    high level support for doing this and that.
+    """
     def __init__(self):
         super().__init__()
         loader = QUiLoader()

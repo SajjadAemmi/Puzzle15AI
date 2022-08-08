@@ -6,6 +6,9 @@ for i in range(4):
 
 
 class Node(object):
+    """
+    high level support for doing this and that.
+    """
     def __init__(self, data):
         self.data = data
         self.f = Node.heuristic(data)
@@ -38,6 +41,9 @@ class Node(object):
 
     @staticmethod
     def heuristic(data):
+        """
+        high level support for doing this and that.
+        """
         #ic = inversionCount(state)
         # Manhattan distance
         md = 0
