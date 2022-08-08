@@ -32,8 +32,9 @@ jobs:
         pip install build
     - name: Build package
       run: python -m build
+      
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      uses: pypa/gh-action-pypi-publish@release/version-0
       with:
         user: __token__
         password: ${{ secrets.pypi-AgEIcHlwaS5vcmcCJGNjMjljNjBjLTdjMWEtNGE1OC1hMzM5LTRlOWFkZTk3Yzk4OQACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYg_eYdv6Lb7VzbaAWW8fxHySWWkil8gC6n-w591zSJdOg }}
