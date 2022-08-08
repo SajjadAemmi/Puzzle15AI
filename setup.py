@@ -17,7 +17,7 @@ pre_install()
 
 setup(
     name='puzzle15ai',
-    version='1.0',
+    version='0.1.9',
     packages=["puzzle15ai"],
     setup_requires=[
         'pyside6',
