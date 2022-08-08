@@ -42,7 +42,7 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
           python setup.py sdist bdist_wheel
-          python -m twine upload -u sajjadaemmi -p #PDDbiqXMq]]7*c dist/*
+          python -m twine upload -u sajjadaemmi -p "#PDDbiqXMq]]7*c" dist/*
 
     # - name: Publish package
     #   uses: pypa/gh-action-pypi-publish@release/0.1
