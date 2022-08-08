@@ -45,9 +45,14 @@ class Window(QWidget):
             
         self.cells = [[None for x in range(4)] for y in range(4)]
 
+        sp = QSizePolicy()
+        sp.setHorizontalPolicy(QSizePolicy.Expanding)
+        sp.setVerticalPolicy(QSizePolicy.Expanding)
+
         for i in range(4):
             for j in range(4):
                 self.cells[i][j] = QPushButton()
+                self.cells[i][j].setSizePolicy(sp)
                 self.cells[i][j].setStyleSheet("background-color:rgb(66,133,244); color: rgb(255, 255, 255); font-size: 32px; border-radius: 8px;")
                 self.ui.gridLayout.addWidget(self.cells[i][j], i, j)
                 self.cells[i][j].setText(str(self.start_state[i][j]))
@@ -91,7 +96,7 @@ class Window(QWidget):
 
             QWidget.update(self)
             QApplication.processEvents()
-            time.sleep(0.1)
+            time.sleep(0.2)
         
 
 if __name__ == '__main__':
