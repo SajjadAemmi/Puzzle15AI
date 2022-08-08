@@ -37,7 +37,7 @@ jobs:
       run: python -m build
       
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/0.1
+      uses: pypa/gh-action-pypi-publish@release/0.1.2
       with:
         user: ${{ secrets.PYPI_USERNAME }}
         password: ${{ secrets.PYPI_PASSWORD }}
