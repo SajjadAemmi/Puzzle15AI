@@ -33,14 +33,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install build setuptools wheel twine
     
-    - name: Build package
-      run: python -m build
+    # - name: Build package
+    #   run: python -m build
       
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/0.1.2
-      with:
-        user: ${{ secrets.PYPI_USERNAME }}
-        password: ${{ secrets.PYPI_PASSWORD }}
+     env:
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
           python setup.py sdist bdist_wheel
           twine upload dist/*
+
+    # - name: Publish package
+    #   uses: pypa/gh-action-pypi-publish@release/0.1
+    #   with:
+    #     user: ${{ secrets.PYPI_USERNAME }}
+    #     password: ${{ secrets.PYPI_PASSWORD }}
+    #   run: |
+    #       python setup.py sdist bdist_wheel
+    #       twine upload dist/*
