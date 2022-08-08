@@ -1,7 +1,7 @@
 import copy
 from operator import attrgetter
 from PySide6.QtCore import QThread, Signal
-from node import Node
+from .node import Node
 
 
 class Tree(QThread):
