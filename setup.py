@@ -33,7 +33,7 @@ setup(
     ],
     url='https://github.com/SajjadAemmi/Puzzle15-AI',
     license='',
-    author='sajjad',
+    author='Sajjad Aemmi',
     author_email='sajjadaemmi@gmail.com',
     description='Puzzle15 AI solver',
     include_package_data=True,
