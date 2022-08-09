@@ -1,3 +1,4 @@
+from pathlib import Path
 from setuptools import setup, find_packages
 
 
@@ -11,13 +12,20 @@ def post_install():
 
 def pre_install():
     """ Implement pre installation routine """
+    # read the contents of your README file
+    global long_description
+    this_directory = Path(__file__).parent
+    long_description = (this_directory / "README.md").read_text()
 
 
 pre_install()
 
+
 setup(
     name='puzzle15ai',
     version='0.1.9',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     packages=["puzzle15ai"],
     setup_requires=[
         'pyside6',
