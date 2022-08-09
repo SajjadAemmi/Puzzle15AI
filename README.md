@@ -5,11 +5,11 @@ Puzzle15 AI solver with A* search algorithm, written with the Qt library using P
 ## Installation
 For install the package you can run this command
 ```
-pip3 install puzzle15ai
+pip3 install puzzle15-ai
 ```
 
 ## Usage
 For inference you can run this command
 ```
-puzzle15ai
+puzzle15-ai
 ```
