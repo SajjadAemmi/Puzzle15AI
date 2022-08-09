@@ -1,6 +1,6 @@
 import unittest
-from puzzle15ai.node import Node
-from puzzle15ai.tree import Tree
+from puzzle15_ai.node import Node
+from puzzle15_ai.tree import Tree
 
 
 class TestNode(unittest.TestCase):

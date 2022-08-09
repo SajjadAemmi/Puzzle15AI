@@ -1,4 +1,4 @@
-from puzzle15ai import main_window
+from puzzle15_ai import main_window
 
 
 main_window.main()
