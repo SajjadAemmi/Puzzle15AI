@@ -1,13 +1,11 @@
-import os
 import time
 import sys
-from pathlib import Path
 
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
-from PySide6.QtUiTools import QUiLoader
 import numpy as np
 
+from .ui_mainwindow import Ui_MainWindow
 from .tree import Tree
 from .node import Node
 
@@ -34,14 +32,13 @@ def checkSolvable(data):
         return False
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     """
-    high level support for doing this and that.
+    Main window class of the app
     """
-    def __init__(self):
-        super().__init__()
-        loader = QUiLoader()
-        self.ui = loader.load(os.path.join(Path(__file__).parent.resolve(), 'main.ui'))
+    def __init__(self, parent=None):
+        super(MainWindow, self).__init__(parent=parent)
+        self.setupUi(self)
 
         while True:
             self.start_state = np.random.choice(range(16), 16, replace=False).reshape(4, 4).tolist()
@@ -59,31 +56,32 @@ class MainWindow(QMainWindow):
                 self.cells[i][j] = QPushButton()
                 self.cells[i][j].setSizePolicy(sp)
                 self.cells[i][j].setStyleSheet("background-color:rgb(66,133,244); color: rgb(255, 255, 255); font-size: 32px; border-radius: 8px;")
-                self.ui.gridLayout.addWidget(self.cells[i][j], i, j)
+                self.gridLayout.addWidget(self.cells[i][j], i, j)
                 self.cells[i][j].setText(str(self.start_state[i][j]))
                 if self.start_state[i][j] == 0:
                     self.cells[i][j].setVisible(False)
                 else:
                     self.cells[i][j].setVisible(True)
 
-        self.ui.btn_start.clicked.connect(self.startGame)
-        self.ui.btn_stop.clicked.connect(self.stopGame)
-        self.ui.progressBar.setVisible(False)
+        self.btn_start.clicked.connect(self.startGame)        
+        self.btn_stop.clicked.connect(self.stopGame)
+        self.progressBar.setVisible(False)
 
-        self.ui.show()
+    def closeEvent(self, event):
+        print("User has clicked the red x on the main window")
+        event.accept()
 
     def stopGame(self):
         self.tree.terminate()
 
     def startGame(self):
-        self.ui.progressBar.setVisible(True)
-        
+        self.progressBar.setVisible(True)
         self.tree = Tree(self.start_state)
         self.tree.signal_end_process.connect(self.solve)
         self.tree.start()
 
     def solve(self, state):
-        self.ui.progressBar.setVisible(False)
+        self.progressBar.setVisible(False)
         QWidget.update(self)
         QApplication.processEvents()
 
@@ -107,6 +105,7 @@ class MainWindow(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     main_window = MainWindow()
+    main_window.show()
     sys.exit(app.exec_())
 
 

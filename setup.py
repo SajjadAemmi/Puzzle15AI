@@ -23,7 +23,7 @@ pre_install()
 
 setup(
     name='puzzle15-ai',
-    version='0.1.12',
+    version='0.1.13',
     long_description=long_description,
     long_description_content_type='text/markdown',
     packages=["puzzle15_ai"],

@@ -4,6 +4,3 @@ include requirements.txt
 
 # Include setup.py
 include setup.py
-
-# include puzzle15ai/main.ui
-recursive-include *.ui
