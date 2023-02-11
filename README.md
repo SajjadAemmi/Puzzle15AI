@@ -18,7 +18,7 @@ If you want to run the game from source code, run this command:
 ```
 python main.py
 ```
-If you made some changes in the `main.ui` file, you need to run the following command:
+If you made some changes in the `mainwindow.ui` file, you need to run the following command:
 ```
 pyside6-uic mainwindow.ui -o ui_mainwindow.py
 ```
