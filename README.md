@@ -1,5 +1,7 @@
 # Puzzle15-AI
 
+[![Python package](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-package.yml/badge.svg)](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-package.yml)
+
 Puzzle15 AI solver with A* search algorithm, written with the Qt library using Python.
 
 ## Installation
