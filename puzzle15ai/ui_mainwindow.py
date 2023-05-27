@@ -98,7 +98,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Puzzle15-AI", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Puzzle15AI", None))
         self.btn_start.setText(QCoreApplication.translate("MainWindow", u"Start", None))
         self.btn_stop.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
     # retranslateUi

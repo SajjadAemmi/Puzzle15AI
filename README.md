@@ -1,20 +1,22 @@
-# Puzzle15-AI
+# Puzzle15AI
 
-[![Python package](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-package.yml/badge.svg)](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-package.yml)
-[![Python application](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-app.yml/badge.svg)](https://github.com/SajjadAemmi/Puzzle15-AI/actions/workflows/python-app.yml)
+[![Python package](https://github.com/SajjadAemmi/Puzzle15AI/actions/workflows/python-package.yml/badge.svg)](https://github.com/SajjadAemmi/Puzzle15AI/actions/workflows/python-package.yml)
+[![Python application](https://github.com/SajjadAemmi/Puzzle15AI/actions/workflows/python-app.yml/badge.svg)](https://github.com/SajjadAemmi/Puzzle15AI/actions/workflows/python-app.yml)
 
 Puzzle15 AI solver with A* search algorithm, written with the Qt library using Python.
+
+![screenshot](assets/screenshot.png)
 
 ## Installation
 For install the package you can run this command
 ```
-pip3 install puzzle15-ai
+pip3 install puzzle15ai
 ```
 
 ## Usage
 For inference you can run this command
 ```
-puzzle15-ai
+puzzle15ai
 ```
 
 If you want to run the game from source code, run this command:

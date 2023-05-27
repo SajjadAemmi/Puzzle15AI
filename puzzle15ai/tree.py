@@ -5,9 +5,6 @@ from .node import Node
 
 
 class Tree(QThread):
-    """
-    high level support for doing this and that.
-    """
     signal_end_process = Signal(object)
     
     def __init__(self, start_state):

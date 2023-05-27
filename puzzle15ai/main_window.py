@@ -32,13 +32,14 @@ def checkSolvable(data):
         return False
 
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow):
     """
     Main window class of the app
     """
-    def __init__(self, parent=None):
-        super(MainWindow, self).__init__(parent=parent)
-        self.setupUi(self)
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
 
         while True:
             self.start_state = np.random.choice(range(16), 16, replace=False).reshape(4, 4).tolist()
@@ -56,16 +57,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.cells[i][j] = QPushButton()
                 self.cells[i][j].setSizePolicy(sp)
                 self.cells[i][j].setStyleSheet("background-color:rgb(66,133,244); color: rgb(255, 255, 255); font-size: 32px; border-radius: 8px;")
-                self.gridLayout.addWidget(self.cells[i][j], i, j)
+                self.ui.gridLayout.addWidget(self.cells[i][j], i, j)
                 self.cells[i][j].setText(str(self.start_state[i][j]))
                 if self.start_state[i][j] == 0:
                     self.cells[i][j].setVisible(False)
                 else:
                     self.cells[i][j].setVisible(True)
 
-        self.btn_start.clicked.connect(self.startGame)        
-        self.btn_stop.clicked.connect(self.stopGame)
-        self.progressBar.setVisible(False)
+        self.ui.btn_start.clicked.connect(self.startGame)        
+        self.ui.btn_stop.clicked.connect(self.stopGame)
+        self.ui.progressBar.setVisible(False)
 
     def closeEvent(self, event):
         print("User has clicked the red x on the main window")
@@ -75,13 +76,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tree.terminate()
 
     def startGame(self):
-        self.progressBar.setVisible(True)
+        self.ui.progressBar.setVisible(True)
         self.tree = Tree(self.start_state)
         self.tree.signal_end_process.connect(self.solve)
         self.tree.start()
 
     def solve(self, state):
-        self.progressBar.setVisible(False)
+        self.ui.progressBar.setVisible(False)
         QWidget.update(self)
         QApplication.processEvents()
 
